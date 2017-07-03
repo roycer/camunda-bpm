@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form role="form" class="form-horizontal">
+
+  <script cam-script type="text/form-script">
+	
+    $scope.estado = [ '0','1','2','3' ];
+
+    var expediente = $scope.expediente = {};
+
+    camForm.on('form-loaded', function() {
+
+      camForm.variableManager.createVariable({
+        name: 'expediente',
+        type: 'json',
+        value: expediente
+      });
+    });
+
+  </script>
+	<h4>Ingresar y Registrar Número de Expediente</h4>
+	<br>
+  <div class="control-group">
+    <label class="control-label" for="expediente">Nro Expediente</label>
+    <div class="controls">
+      <input id="expediente" class="form-control" type="text" ng-model="expediente.numero" required />
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="monto">Monto a girar</label>
+    <div class="controls">
+      <input id="monto" class="form-control" type="text" ng-model="expediente.monto" required />
+    </div>
+  </div>
+
+</form>
+
+</body>
+</html>
