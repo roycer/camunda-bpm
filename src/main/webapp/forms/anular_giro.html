@@ -9,16 +9,19 @@
     });
 
     camForm.on('variables-fetched', function() {
+
       $scope.expediente = camForm.variableManager.variableValue('expediente');
+
     });
 
-	$scope.expediente.estado=3;
  </script>
 	<h4>Anular Giro</h4>
+	</br>
+	{{expediente}}
 	<div class="control-group">
 		<label class="control-label" for="anular">Desa anular el Giro?</label>
 		<div class="controls">
-		<input type="hidden" ng-model="expediente.estado">
+		<input type="hidden" ng-model="expediente.estado" value=0>
 		</div>
 	</div>
 </form>

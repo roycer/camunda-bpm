@@ -61,18 +61,18 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0w0yow1" name="Si" sourceRef="ExclusiveGateway_14c38ce" targetRef="Revisar_Firma_Electronica">
       <bpmn:documentation />
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").numberValue()==1}]]></bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").value()=="1"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_18qov84" name="No" sourceRef="ExclusiveGateway_14c38ce" targetRef="Asignar_Estado_rechazado">
       <bpmn:documentation />
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").numberValue()==2}]]></bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").value()=="2"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0npobf2" sourceRef="Registrar_Girado_SIAF" targetRef="Revisar_Estado_SIAF">
       <bpmn:documentation />
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_090q48d" name="Si" sourceRef="ExclusiveGateway_0l131do" targetRef="Realizar_Pago_Proveedor">
       <bpmn:documentation />
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").numberValue()==1}]]></bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").value()=="1"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0dtje9b" sourceRef="Realizar_Pago_Proveedor" targetRef="EndEvent_026tf7g">
       <bpmn:documentation />
@@ -97,7 +97,7 @@
       <bpmn:outgoing>SequenceFlow_0bn6ds3</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1jkung6" name="No" sourceRef="ExclusiveGateway_0l131do" targetRef="Asignar_Estado_rechazado">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").numberValue()==2}]]></bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[${expediente.prop("estado").value()=="2"}]]></bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:userTask id="Revisar_Estado_SIAF" name="Revisar estado" camunda:formKey="embedded:app:forms/revisar_estado.html" camunda:assignee="admin_siaf">
       <bpmn:documentation />
