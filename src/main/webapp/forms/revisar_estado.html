@@ -27,10 +27,15 @@
 	<br>
 
   <div class="control-group">
-<!--     <label class="control-label" for="monto">Monto a girar</label> -->
+    <label class="control-label" for="monto">Revisar Estado</label>
     <div class="controls">
-      <input id="monto" class="form-control" type="hidden" ng-model="expediente.fase" value="G" />
-      <input id="monto" class="form-control" type="hidden" ng-model="expediente.estado" value=0 />
+    
+		 	<input type="radio" ng-model="expediente.estado"  value=1 checked> Aprobado<br>
+  			<input type="radio" ng-model="expediente.estado" value=2> Desaprobado<br>
+  			 
+    
+<!--       <input id="monto" class="form-control" type="hidden" ng-model="expediente.fase" value="G" /> -->
+<!--       <input id="monto" class="form-control" type="hidden" ng-model="expediente.estado" value=0 /> -->
     </div>
   </div>
 
