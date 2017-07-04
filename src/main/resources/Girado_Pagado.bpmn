@@ -39,7 +39,6 @@
         <bpmn:flowNodeRef>Asignar_Estado_rechazado</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Anular_Girado</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Validacion_MEF</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>BoundaryEvent_0ghrm2v</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="caja" name="Caja">
         <bpmn:flowNodeRef>ExclusiveGateway_0l131do</bpmn:flowNodeRef>
@@ -132,19 +131,14 @@
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0dbceap" sourceRef="Verificar_Pago" targetRef="ExclusiveGateway_0l131do" />
     <bpmn:userTask id="Verificar_Pago" name="Verificar Pago">
-      <bpmn:incoming>SequenceFlow_08lve5k</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_127j1hw</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0dbceap</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="SequenceFlow_08lve5k" sourceRef="BoundaryEvent_0ghrm2v" targetRef="Verificar_Pago" />
-    <bpmn:boundaryEvent id="BoundaryEvent_0ghrm2v" attachedToRef="Validacion_MEF">
-      <bpmn:outgoing>SequenceFlow_08lve5k</bpmn:outgoing>
-      <bpmn:timerEventDefinition>
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1M</bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:serviceTask id="Validacion_MEF" name="Validacion MEF" camunda:expression="${true}">
       <bpmn:incoming>SequenceFlow_0bn6ds3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_127j1hw</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_127j1hw" sourceRef="Validacion_MEF" targetRef="Verificar_Pago" />
     <bpmn:association id="Association_0mh9pyc" sourceRef="Registrar_Girado_SIAF" targetRef="TextAnnotation_10d3ti8" />
     <bpmn:association id="Association_1ltcw5y" sourceRef="Revisar_Estado_SIAF" targetRef="TextAnnotation_1ss4731" />
     <bpmn:association id="Association_15sxghn" sourceRef="ExclusiveGateway_14c38ce" targetRef="TextAnnotation_060qcju" />
@@ -365,17 +359,11 @@
       <bpmndi:BPMNShape id="UserTask_1vm9mk1_di" bpmnElement="Verificar_Pago">
         <dc:Bounds x="863" y="477" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BoundaryEvent_1bp74rt_di" bpmnElement="BoundaryEvent_0ghrm2v">
-        <dc:Bounds x="897" y="289" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="915" y="329" width="0" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_08lve5k_di" bpmnElement="SequenceFlow_08lve5k">
-        <di:waypoint xsi:type="dc:Point" x="915" y="325" />
+      <bpmndi:BPMNEdge id="SequenceFlow_127j1hw_di" bpmnElement="SequenceFlow_127j1hw">
+        <di:waypoint xsi:type="dc:Point" x="913" y="307" />
         <di:waypoint xsi:type="dc:Point" x="913" y="477" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="914" y="380" width="0" height="12" />
+          <dc:Bounds x="928" y="386" width="0" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
