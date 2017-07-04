@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>StartProcess</servlet-name>
+  	<display-name>StartProcess</display-name>
+  	<description></description>
+  	<servlet-class>com.sig.servlet.StartProcess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>StartProcess</servlet-name>
+  	<url-pattern>/StartProcess</url-pattern>
+  </servlet-mapping>
+
 </web-app>
