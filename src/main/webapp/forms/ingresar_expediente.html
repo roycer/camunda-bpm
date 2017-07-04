@@ -2,7 +2,7 @@
 
   <script cam-script type="text/form-script">
 	
-    
+ 
 
     var expediente = $scope.expediente = {};
 
@@ -22,6 +22,7 @@
     <label class="control-label" for="expediente">Nro Expediente</label>
     <div class="controls">
       <input id="expediente" class="form-control" type="text" ng-model="expediente.numero" required />
+      <input id="expe" class="form-control" type="hidden" ng-model="expediente.estado" value='0' />
     </div>
   </div>
 
