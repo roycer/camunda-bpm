@@ -2,34 +2,30 @@
 
   <script cam-script type="text/form-script">
 	
-    $scope.estado = [ '0','1','2','3' ];
+
 
 	camForm.on('form-loaded', function() {
      
       camForm.variableManager.fetchVariable('expediente');
-
-		
     });
 
     camForm.on('variables-fetched', function() {
-
+     
       $scope.expediente = camForm.variableManager.variableValue('expediente');
 
     });
 
-
-
   </script>
 	<h4>Registrar girado para expediente {{expediente.numero}}</h4>
 	<br>
+	<h3>{{expediente}}</h3>
 	
-	{{expediente}}
 
   <div class="control-group">
-<!--     <label class="control-label" for="monto">Monto a girar</label> -->
+
     <div class="controls">
-      <input id="fase" class="form-control" type="hidden" ng-model="expediente.fase" value="G" />
-      <input id="estado" class="form-control" type="hidden" ng-model="expediente.estado" value=0 />
+      <input id="monto" class="form-control" type="hidden" ng-model="expediente.fase" value="G" />
+<!--       <input id="estado" class="form-control" type="hidden" ng-model="expediente.estado" value="0" /> -->
     </div>
   </div>
 

@@ -2,7 +2,6 @@
 
   <script cam-script type="text/form-script">
 	
-    $scope.estado = [ '0','1','2','3' ];
 
 	camForm.on('form-loaded', function() {
      
@@ -17,15 +16,13 @@
   </script>
 	<h4>Registrar girado para expediente {{expediente.numero}}</h4>
 	<br>
-	
-	{{expediente}}
 
   <div class="control-group">
     <label class="control-label" for="monto">Revisar Estado</label>
     <div class="controls">
     
-		 	<input type="radio" ng-model="expediente.estado"  value=1 checked> Aprobado<br>
-  			<input type="radio" ng-model="expediente.estado" value=2> Desaprobado<br>
+		 	<input type="radio" ng-model="expediente.estado"  value='1' checked> Aprobado<br>
+  			<input type="radio" ng-model="expediente.estado" value='2'> Desaprobado<br>
   			 
     
 <!--       <input id="monto" class="form-control" type="hidden" ng-model="expediente.fase" value="G" /> -->

@@ -1,24 +1,24 @@
 <form role="form" class="form-horizontal">
 
 <script cam-script type="text/form-script">
- 	 $scope.estado = [ '0','1','2','3' ];
+
 
     camForm.on('form-loaded', function() {
-     
       camForm.variableManager.fetchVariable('expediente');
     });
 
     camForm.on('variables-fetched', function() {
       $scope.expediente = camForm.variableManager.variableValue('expediente');
+	 $scope.expediente.estado=2;
     });
 
 
  </script>
 	<h4>Aprobación MEF</h4>
 	<div class="control-group">
-		<label class="control-label" for="firma">Realizar Firma?</label>
+		<label class="control-label" for="firma">Aprobar Siaf?</label>
 		<div class="controls">
-			<input type="checkbox" ng-model="expediente.estado" ng-true-value="1" ng-false-value="2">
+			<input type="checkbox" ng-model="expediente.estado" ng-true-value="1" ng-false-value="2"  >
 		</div>
 	</div>
 </form>
