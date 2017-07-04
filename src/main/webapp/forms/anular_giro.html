@@ -2,15 +2,17 @@
 
 <script cam-script type="text/form-script">
 
+
+
+
     camForm.on('form-loaded', function() {
-     
       camForm.variableManager.fetchVariable('expediente');
+
     });
 
     camForm.on('variables-fetched', function() {
-
       $scope.expediente = camForm.variableManager.variableValue('expediente');
-		
+
     });
 	
 	camForm.on('submit', function(evt) {
@@ -20,10 +22,9 @@
   });
 	
 
+	
  </script>
 	<h4>Anular Giro</h4>
-	</br>
-	{{expediente}}
 	<div class="control-group">
 		<label class="control-label" for="anular">Desea anular el Giro?</label>
 		<div class="controls">
