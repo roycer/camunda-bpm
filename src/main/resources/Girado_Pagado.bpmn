@@ -131,20 +131,20 @@
       <bpmn:outgoing>SequenceFlow_0c2tbar</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0dbceap" sourceRef="Verificar_Pago" targetRef="ExclusiveGateway_0l131do" />
-    <bpmn:userTask id="Verificar_Pago" name="Verificar Pago" camunda:formKey="embedded:app:verificar_pago.html">
+    <bpmn:userTask id="Verificar_Pago" name="Verificar Pago">
       <bpmn:incoming>SequenceFlow_08lve5k</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0dbceap</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_08lve5k" sourceRef="BoundaryEvent_0ghrm2v" targetRef="Verificar_Pago" />
-    <bpmn:serviceTask id="Validacion_MEF" name="Validacion MEF" camunda:expression="${true}">
-      <bpmn:incoming>SequenceFlow_0bn6ds3</bpmn:incoming>
-    </bpmn:serviceTask>
     <bpmn:boundaryEvent id="BoundaryEvent_0ghrm2v" attachedToRef="Validacion_MEF">
       <bpmn:outgoing>SequenceFlow_08lve5k</bpmn:outgoing>
       <bpmn:timerEventDefinition>
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT1M</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
+    <bpmn:serviceTask id="Validacion_MEF" name="Validacion MEF" camunda:expression="${true}">
+      <bpmn:incoming>SequenceFlow_0bn6ds3</bpmn:incoming>
+    </bpmn:serviceTask>
     <bpmn:association id="Association_0mh9pyc" sourceRef="Registrar_Girado_SIAF" targetRef="TextAnnotation_10d3ti8" />
     <bpmn:association id="Association_1ltcw5y" sourceRef="Revisar_Estado_SIAF" targetRef="TextAnnotation_1ss4731" />
     <bpmn:association id="Association_15sxghn" sourceRef="ExclusiveGateway_14c38ce" targetRef="TextAnnotation_060qcju" />
@@ -296,9 +296,11 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0bn6ds3_di" bpmnElement="SequenceFlow_0bn6ds3">
         <di:waypoint xsi:type="dc:Point" x="740" y="267" />
+        <di:waypoint xsi:type="dc:Point" x="806" y="267" />
+        <di:waypoint xsi:type="dc:Point" x="806" y="267" />
         <di:waypoint xsi:type="dc:Point" x="863" y="267" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="756.5" y="246" width="90" height="12" />
+          <dc:Bounds x="776" y="261" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="TextAnnotation_10d3ti8_di" bpmnElement="TextAnnotation_10d3ti8">
