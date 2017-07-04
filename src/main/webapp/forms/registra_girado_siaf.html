@@ -2,12 +2,9 @@
 
   <script cam-script type="text/form-script">
 	
-    $scope.estado = [ '0','1','2','3' ];
-
-	camForm.on('form-loaded', function() {
+    camForm.on('form-loaded', function() {
      
       camForm.variableManager.fetchVariable('expediente');
-
 		
     });
 
@@ -17,6 +14,12 @@
 
     });
 
+	camForm.on('submit', function(evt) {
+    // set value in variable manager so that it can be sent to backend
+	$scope.expediente.fase = "G";
+	$scope.expediente.estado = 0;
+    camForm.variableManager.variableValue('expediente', $scope.expediente);
+  	});
 
 
   </script>
@@ -28,8 +31,8 @@
   <div class="control-group">
 <!--     <label class="control-label" for="monto">Monto a girar</label> -->
     <div class="controls">
-      <input id="fase" class="form-control" type="hidden" ng-model="expediente.fase" value="G" />
-      <input id="estado" class="form-control" type="hidden" ng-model="expediente.estado" value=0 />
+<!--       <input id="fase" class="form-control" type="hidden" ng-model="expediente.fase" value="G" /> -->
+<!--       <input id="estado" class="form-control" type="hidden" ng-model="expediente.estado" value=0 /> -->
     </div>
   </div>
 

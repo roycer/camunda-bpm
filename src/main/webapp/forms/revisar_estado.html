@@ -1,8 +1,6 @@
 <form role="form" class="form-horizontal">
 
   <script cam-script type="text/form-script">
-	
-    $scope.estado = [ '0','1','2','3' ];
 
 	camForm.on('form-loaded', function() {
      
@@ -13,6 +11,18 @@
       
       $scope.expediente = camForm.variableManager.variableValue('expediente');
     });
+
+	camForm.on('submit', function(evt) {
+    // set value in variable manager so that it can be sent to backend
+	$scope.expediente.fase = "G";
+	//$scope.expediente.estado = 0;
+	
+	var estado = $scope.expediente.estado;
+	var a = parseInt(estado);
+	$scope.expediente.estado = a;
+
+    camForm.variableManager.variableValue('expediente', $scope.expediente);
+  	});
 
   </script>
 	<h4>Registrar girado para expediente {{expediente.numero}}</h4>
