@@ -21,6 +21,6 @@ Ext.define('girado.controller.Main', {
     			}
     		});
     	}
- 
     }
 });
+
