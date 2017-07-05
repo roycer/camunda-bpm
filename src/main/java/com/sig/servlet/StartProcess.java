@@ -52,7 +52,7 @@ public class StartProcess extends HttpServlet {
 	    
 	    variables.put("expediente", jsonValue);
 		String idProcessInstance = processEngine.getRuntimeService().startProcessInstanceByKey(idBPMN,variables).getProcessInstanceId();
-		LOGGER.log(Level.INFO,"idBPMN:"+idBPMN+"\n\tidProcessInstance: "+idProcessInstance+"\n\tmonto:"+monto+"\n\tnumero: "+numero+"\n");
+		LOGGER.log(Level.INFO,"\n\n\tidBPMN:"+idBPMN+"\n\tidProcessInstance: "+idProcessInstance+"\n\tmonto:"+monto+"\n\tnumero: "+numero+"\n");
 		
 	}
 
