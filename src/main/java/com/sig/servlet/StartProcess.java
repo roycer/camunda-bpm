@@ -49,33 +49,30 @@ public class StartProcess extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idBPMN = propiedades.getProperty("idBPMN");
-		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 		
+		String idBPMN = propiedades.getProperty("idBPMN");
 		String numero = request.getParameter("numero");
 		String monto = request.getParameter("monto");
 		
-		if(numero!=null) numero = "1";
+		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
+		Map<String, Object> variables = new HashMap<String, Object>();
+		
+		if(numero==null) numero = "1";
 		if(monto==null) monto="500";
 		
-		response.getWriter().append("Start Process with Id: ").append(idBPMN);
-	    Map<String, Object> variables = new HashMap<String, Object>();
-	    
 	    String json = "{\"numero\":"+numero+",\"monto\":"+monto+"}";
-	           
 	    JsonValue jsonValue = SpinValues.jsonValue(json).create();
-		
+	    
 	    variables.put("expediente", jsonValue);
 		processEngine.getRuntimeService().startProcessInstanceByKey(idBPMN,variables);
 		
-		System.out.println("monto:"+monto+"\tnumero: "+numero);
+		System.out.println("idBPMN:"+idBPMN+"\tmonto:"+monto+"\tnumero: "+numero);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -9,17 +9,17 @@ Ext.define('girado.controller.Main', {
     },
     iniciarProceso: function(button){
     	var form = button.up('form').getForm();
+    	
     	if(form.isValid()){
     		form.submit({
     			success: function(form,action){
-    				Ext.Msg.alert('Success','CargoProceso');
-
+    				Ext.Msg.alert('Success','Cargo Proceso');
     			},
     			failure: function(form,action){
-    				Ext.Msg.alert('Failed','waa');
-    				console.log(action);
+    				Ext.Msg.alert('Failed','No se pudo Cargar Proceso');
     			}
     		});
     	}
+ 
     }
 });
