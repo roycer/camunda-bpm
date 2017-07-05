@@ -27,7 +27,7 @@ public class MyProcessApplication extends ServletProcessApplication {
 	@PostDeploy
 	public void onDeploymentFinished(ProcessEngine processEngine) {
 
-		LOGGER.log(Level.INFO, "\nGirado: " + processEngine.getName());
+		LOGGER.log(Level.INFO, "\n\n\tGirado:[" + processEngine.getName()+"]\n");
 
 		RepositoryService repositoryService = processEngine.getRepositoryService();
 		RuntimeService runtimeService = processEngine.getRuntimeService();
@@ -41,18 +41,19 @@ public class MyProcessApplication extends ServletProcessApplication {
 		CaseService caseService = processEngine.getCaseService();
 		DecisionService decisionService = processEngine.getDecisionService();
 
-		LOGGER.log(Level.INFO, repositoryService.toString());
-		LOGGER.log(Level.INFO, repositoryService.toString());
-		LOGGER.log(Level.INFO, runtimeService.toString());
-		LOGGER.log(Level.INFO, taskService.toString());
-		LOGGER.log(Level.INFO, identityService.toString());
-		LOGGER.log(Level.INFO, formService.toString());
-		LOGGER.log(Level.INFO, historyService.toString());
-		LOGGER.log(Level.INFO, managementService.toString());
-		LOGGER.log(Level.INFO, filterService.toString());
-		LOGGER.log(Level.INFO, externalTaskService.toString());
-		LOGGER.log(Level.INFO, caseService.toString());
-		LOGGER.log(Level.INFO, decisionService.toString());
+		LOGGER.log(Level.INFO, "\n\n\t*[Proccess Engine API]\n"+
+				"\n\t"+repositoryService.toString()+
+				"\n\t"+repositoryService.toString()+
+				"\n\t"+runtimeService.toString()+
+				"\n\t"+taskService.toString()+
+				"\n\t"+identityService.toString()+
+				"\n\t"+formService.toString()+
+				"\n\t"+historyService.toString()+
+				"\n\t"+managementService.toString()+
+				"\n\t"+filterService.toString()+
+				"\n\t"+externalTaskService.toString()+
+				"\n\t"+caseService.toString()+
+				"\n\t"+decisionService.toString()+"\n");
 
 	}
 }
