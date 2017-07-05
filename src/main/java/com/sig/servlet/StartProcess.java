@@ -51,7 +51,9 @@ public class StartProcess extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idBPMN = propiedades.getProperty("idBPMN");
 		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
-		
+		String numero = request.getParameter("numero");
+		String monto = request.getParameter("monto");
+				
 		response.getWriter().append("Start Process with Id: ").append(idBPMN);
 	    Map<String, Object> variables = new HashMap<String, Object>();
 	    
@@ -61,6 +63,8 @@ public class StartProcess extends HttpServlet {
 		
 	    variables.put("expediente", jsonValue);
 		processEngine.getRuntimeService().startProcessInstanceByKey(idBPMN,variables);
+		
+		System.out.println("monto:"+monto+"\nnumero: "+numero);
 	}
 
 	/**

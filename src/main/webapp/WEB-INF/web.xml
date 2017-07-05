@@ -16,5 +16,7 @@
 		<servlet-name>StartProcess</servlet-name>
 		<url-pattern>/StartProcess</url-pattern>
 	</servlet-mapping>
-
+	<welcome-file-list>
+	    <welcome-file>index.html</welcome-file>
+	</welcome-file-list>
 </web-app>
