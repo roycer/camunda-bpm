@@ -82,23 +82,23 @@
     <bpmn:sequenceFlow id="SequenceFlow_0c2tbar" sourceRef="Anular_Girado" targetRef="Registrar_Girado_SIAF">
       <bpmn:documentation />
     </bpmn:sequenceFlow>
-    <bpmn:startEvent id="Inicio_Girado_Pagado" name="Nro de expediente y monto" camunda:formKey="embedded:app:ingresar_expediente.html">
+    <bpmn:startEvent id="Inicio_Girado_Pagado" name="Nro de expediente y monto" camunda:formKey="embedded:app:forms/ingresar_expediente.html">
       <bpmn:documentation />
       <bpmn:outgoing>SequenceFlow_1c11x17</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:userTask id="Registrar_Girado_SIAF" name="Registrar el girado en el SIAF" camunda:formKey="embedded:app:registra_girado_siaf.html" camunda:assignee="roycer">
+    <bpmn:userTask id="Registrar_Girado_SIAF" name="Registrar el girado en el SIAF" camunda:formKey="embedded:app:forms/registra_girado_siaf.html" camunda:assignee="roycer">
       <bpmn:documentation />
       <bpmn:incoming>SequenceFlow_1c11x17</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_0c2tbar</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0npobf2</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Revisar_Firma_Electronica" name="Realizar la firma Electrónica" camunda:formKey="embedded:app:realizar_firma_electronica.html" camunda:assignee="luis">
+    <bpmn:userTask id="Revisar_Firma_Electronica" name="Realizar la firma Electrónica" camunda:formKey="embedded:app:forms/realizar_firma_electronica.html" camunda:assignee="luis">
       <bpmn:documentation />
       <bpmn:incoming>SequenceFlow_0w0yow1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0bn6ds3</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_1jkung6" name="No" sourceRef="ExclusiveGateway_0l131do" targetRef="Asignar_Estado_rechazado" />
-    <bpmn:userTask id="Revisar_Estado_SIAF" name="Revisar estado" camunda:formKey="embedded:app:revisar_estado.html" camunda:assignee="admin_siaf">
+    <bpmn:userTask id="Revisar_Estado_SIAF" name="Revisar estado" camunda:formKey="embedded:app:forms/revisar_estado.html" camunda:assignee="admin_siaf">
       <bpmn:documentation />
       <bpmn:incoming>SequenceFlow_0npobf2</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_061kmi0</bpmn:outgoing>
@@ -124,7 +124,7 @@
       <bpmn:incoming>SequenceFlow_1jkung6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_00equ5j</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Anular_Girado" name="Anular Giro" camunda:formKey="embedded:app:anular_giro.html" camunda:assignee="roycer">
+    <bpmn:userTask id="Anular_Girado" name="Anular Giro" camunda:formKey="embedded:app:forms/anular_giro.html" camunda:assignee="roycer">
       <bpmn:documentation />
       <bpmn:incoming>SequenceFlow_00equ5j</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0c2tbar</bpmn:outgoing>
