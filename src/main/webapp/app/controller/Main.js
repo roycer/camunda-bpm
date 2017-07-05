@@ -14,6 +14,7 @@ Ext.define('girado.controller.Main', {
     		form.submit({
     			success: function(form,action){
     				Ext.Msg.alert('Success','Cargo Proceso');
+    				form.reset();
     			},
     			failure: function(form,action){
     				Ext.Msg.alert('Failed','No se pudo Cargar Proceso');
