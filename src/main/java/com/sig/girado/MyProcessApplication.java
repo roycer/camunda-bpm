@@ -55,4 +55,4 @@ public class MyProcessApplication extends ServletProcessApplication {
 		LOGGER.log(Level.INFO, decisionService.toString());
 
 	}
-	}
+}
